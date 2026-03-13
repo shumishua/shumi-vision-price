@@ -1,365 +1,389 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shumi Vision — Price List</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,700;1,300;1,700&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    background: #030008;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 50px 30px;
-    font-family: 'Montserrat', sans-serif;
-  }
+body {
+background: #030008;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+padding: 40px 16px 60px;
+font-family: ‘Montserrat’, sans-serif;
+}
 
-  .poster {
-    width: 820px;
-    background: #05000d;
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-  }
+.poster {
+width: 100%;
+max-width: 820px;
+background: #05000d;
+position: relative;
+overflow: hidden;
+}
 
-  /* TOP HERO SECTION */
-  .hero {
-    padding: 60px 64px 48px;
-    position: relative;
-    border-bottom: 1px solid rgba(147,51,234,0.15);
-  }
+/* ── HERO ── */
+.hero {
+padding: 52px 52px 44px;
+position: relative;
+border-bottom: 1px solid rgba(147,51,234,0.15);
+}
 
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 80% 50%, rgba(147,51,234,0.18) 0%, transparent 55%),
-      radial-gradient(ellipse at 20% 80%, rgba(88,28,135,0.1) 0%, transparent 45%);
-    pointer-events: none;
-  }
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 80% 50%, rgba(147,51,234,0.18) 0%, transparent 55%),
+radial-gradient(ellipse at 20% 80%, rgba(88,28,135,0.1) 0%, transparent 45%);
+pointer-events: none;
+}
 
-  .hero-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 32px;
-  }
+.hero-top {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin-bottom: 28px;
+}
 
-  .badge {
-    font-size: 8px;
-    letter-spacing: 5px;
-    color: rgba(192,132,252,0.5);
-    text-transform: uppercase;
-    font-weight: 300;
-    border: 1px solid rgba(147,51,234,0.2);
-    padding: 5px 12px;
-  }
+.badge {
+font-size: 8px;
+letter-spacing: 5px;
+color: rgba(192,132,252,0.5);
+text-transform: uppercase;
+font-weight: 300;
+border: 1px solid rgba(147,51,234,0.2);
+padding: 5px 12px;
+}
 
-  .year-tag {
-    font-size: 8px;
-    letter-spacing: 4px;
-    color: rgba(147,51,234,0.5);
-    text-transform: uppercase;
-    font-weight: 300;
-    padding-top: 6px;
-  }
+.year-tag {
+font-size: 8px;
+letter-spacing: 4px;
+color: rgba(147,51,234,0.5);
+text-transform: uppercase;
+font-weight: 300;
+padding-top: 6px;
+}
 
-  /* BIG TITLE */
-  .big-title {
-    font-family: 'Cormorant', serif;
-    font-size: 110px;
-    font-weight: 700;
-    font-style: italic;
-    line-height: 0.88;
-    letter-spacing: -3px;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
-  }
+.big-title {
+font-family: ‘Cormorant’, serif;
+font-size: clamp(72px, 13vw, 110px);
+font-weight: 700;
+font-style: italic;
+line-height: 0.88;
+letter-spacing: -3px;
+color: #fff;
+position: relative;
+z-index: 1;
+margin-bottom: 20px;
+}
 
-  .big-title span {
-    display: block;
-    background: linear-gradient(110deg, #fff 0%, #f0e0ff 30%, #c084fc 65%, #7c22ce 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+.big-title span {
+display: block;
+background: linear-gradient(110deg, #fff 0%, #f0e0ff 30%, #c084fc 65%, #7c22ce 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
 
-  .big-title .outline {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px rgba(147,51,234,0.4);
-    background: none;
-    display: block;
-  }
+.big-title .outline {
+-webkit-text-fill-color: transparent;
+-webkit-text-stroke: 1px rgba(147,51,234,0.4);
+background: none;
+display: block;
+}
 
-  .hero-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
+.hero-bottom {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+}
 
-  .tagline {
-    font-size: 9px;
-    letter-spacing: 6px;
-    color: rgba(192,132,252,0.35);
-    text-transform: uppercase;
-    font-weight: 200;
-  }
+.tagline {
+font-size: 9px;
+letter-spacing: 6px;
+color: rgba(192,132,252,0.35);
+text-transform: uppercase;
+font-weight: 200;
+}
 
-  .hero-price-hint {
-    text-align: right;
-  }
+.hero-price-hint { text-align: right; }
 
-  .from-text {
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(192,132,252,0.4);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 2px;
-  }
+.from-text {
+font-size: 9px;
+letter-spacing: 3px;
+color: rgba(192,132,252,0.4);
+text-transform: uppercase;
+display: block;
+margin-bottom: 2px;
+}
 
-  .from-price {
-    font-family: 'Cormorant', serif;
-    font-size: 42px;
-    font-weight: 300;
-    color: #c084fc;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+.from-price {
+font-family: ‘Cormorant’, serif;
+font-size: 42px;
+font-weight: 300;
+color: #c084fc;
+line-height: 1;
+letter-spacing: -1px;
+}
 
-  /* BODY */
-  .body {
-    padding: 0 64px;
-  }
+/* ── BODY ── */
+.body { padding: 0 52px; }
 
-  /* PACKS */
-  .packs-section {
-    padding: 40px 0 36px;
-    border-bottom: 1px solid rgba(147,51,234,0.1);
-  }
+/* ── SECTION LABEL ── */
+.section-label {
+font-size: 7px;
+letter-spacing: 6px;
+color: rgba(147,51,234,0.5);
+text-transform: uppercase;
+font-weight: 300;
+margin-bottom: 20px;
+}
 
-  .section-label {
-    font-size: 7px;
-    letter-spacing: 6px;
-    color: rgba(147,51,234,0.5);
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-bottom: 24px;
-  }
+/* ── PACKS ── */
+.packs-section {
+padding: 36px 0 32px;
+border-bottom: 1px solid rgba(147,51,234,0.1);
+}
 
-  .pack-row {
-    display: grid;
-    grid-template-columns: 160px 1fr 130px;
-    align-items: center;
-    padding: 16px 0;
-    border-top: 1px solid rgba(147,51,234,0.08);
-    gap: 24px;
-  }
+.pack-row {
+display: grid;
+grid-template-columns: 152px 1fr 128px;
+align-items: center;
+padding: 15px 0;
+border-top: 1px solid rgba(147,51,234,0.08);
+gap: 20px;
+}
 
-  .pack-row:last-child {
-    border-bottom: 1px solid rgba(147,51,234,0.08);
-  }
+.pack-row:last-child {
+border-bottom: 1px solid rgba(147,51,234,0.08);
+}
 
-  .pack-title {
-    font-family: 'Cormorant', serif;
-    font-size: 22px;
-    font-style: italic;
-    font-weight: 700;
-    color: #e9d5ff;
-    line-height: 1;
-  }
+.pack-title {
+font-family: ‘Cormorant’, serif;
+font-size: 22px;
+font-style: italic;
+font-weight: 700;
+color: #e9d5ff;
+line-height: 1;
+}
 
-  .pack-sub {
-    font-size: 7px;
-    letter-spacing: 3px;
-    color: rgba(147,51,234,0.5);
-    text-transform: uppercase;
-    margin-top: 3px;
-    font-weight: 200;
-  }
+.pack-sub {
+font-size: 7px;
+letter-spacing: 3px;
+color: rgba(147,51,234,0.5);
+text-transform: uppercase;
+margin-top: 3px;
+font-weight: 200;
+}
 
-  .pack-contents {
-    font-size: 10px;
-    color: rgba(200,170,255,0.55);
-    font-weight: 200;
-    line-height: 1.7;
-    letter-spacing: 0.3px;
-  }
+.pack-contents {
+font-size: 10px;
+color: rgba(200,170,255,0.55);
+font-weight: 200;
+line-height: 1.7;
+letter-spacing: 0.3px;
+}
 
-  .pack-contents .special {
-    color: #c084fc;
-  }
+.pack-contents .special { color: #c084fc; }
 
-  .pack-cost {
-    text-align: right;
-  }
+.pack-cost { text-align: right; }
 
-  .cost-rub {
-    font-family: 'Cormorant', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1;
-    display: block;
-  }
+.cost-rub {
+font-family: ‘Cormorant’, serif;
+font-size: 26px;
+font-weight: 700;
+color: #fff;
+line-height: 1;
+display: block;
+}
 
-  .cost-usd {
-    font-size: 10px;
-    color: rgba(192,132,252,0.4);
-    font-weight: 200;
-    display: block;
-    margin-top: 2px;
-  }
+.cost-usd {
+font-size: 10px;
+color: rgba(192,132,252,0.4);
+font-weight: 200;
+display: block;
+margin-top: 2px;
+}
 
-  .cost-days {
-    font-size: 8px;
-    color: rgba(147,51,234,0.45);
-    letter-spacing: 1px;
-    display: block;
-    margin-top: 4px;
-  }
+.cost-days {
+font-size: 8px;
+color: rgba(147,51,234,0.45);
+letter-spacing: 1px;
+display: block;
+margin-top: 4px;
+}
 
-  /* SERVICES */
-  .services-section {
-    padding: 36px 0;
-    border-bottom: 1px solid rgba(147,51,234,0.1);
-  }
+/* ── SERVICES ── */
+.services-section {
+padding: 32px 0;border-bottom: 1px solid rgba(147,51,234,0.1);
+}
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
+.services-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0;
+}
 
-  .svc {
-    display: flex;
-    align-items: baseline;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(147,51,234,0.06);
-    gap: 8px;
-  }
+.svc {
+display: flex;
+align-items: baseline;
+padding: 8px 0;
+border-bottom: 1px solid rgba(147,51,234,0.06);
+gap: 8px;
+}
 
-  .svc:nth-child(odd) { padding-right: 28px; }
-  .svc:nth-child(even) {
-    padding-left: 28px;
-    border-left: 1px solid rgba(147,51,234,0.08);
-  }
+.svc:nth-child(odd)  { padding-right: 24px; }
+.svc:nth-child(even) {
+padding-left: 24px;
+border-left: 1px solid rgba(147,51,234,0.08);
+}
 
-  .svc-name {
-    font-size: 10.5px;
-    color: rgba(210,185,255,0.6);
-    font-weight: 200;
-    flex: 1;
-    letter-spacing: 0.2px;
-  }
+.svc-name {
+font-size: 10px;
+color: rgba(210,185,255,0.6);
+font-weight: 200;
+flex: 1;
+letter-spacing: 0.2px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
 
-  .svc-dot {
-    flex: 1;
-    min-width: 10px;
-    border-bottom: 1px dotted rgba(147,51,234,0.18);
-    margin-bottom: 3px;
-  }
+.svc-dot {
+flex: 1;
+min-width: 8px;
+max-width: 40px;
+border-bottom: 1px dotted rgba(147,51,234,0.18);
+margin-bottom: 3px;
+}
 
-  .svc-price {
-    font-size: 11px;
-    color: #e0c8ff;
-    font-weight: 300;
-    white-space: nowrap;
-    letter-spacing: 0.3px;
-  }
+.svc-price {
+font-size: 10.5px;
+color: #e0c8ff;
+font-weight: 300;
+white-space: nowrap;
+letter-spacing: 0.3px;
+}
 
-  /* TERMS + FOOTER */
-  .bottom {
-    padding: 28px 0 0;
-  }
+/* ── BOTTOM / TERMS / FOOTER ── */
+.bottom { padding: 28px 0 0; }
 
-  .terms-row {
-    display: flex;
-    gap: 0;
-    margin-bottom: 32px;
-  }
+.terms-row {
+display: flex;
+gap: 0;
+margin-bottom: 28px;
+}
 
-  .term {
-    flex: 1;
-    padding-right: 24px;
-    border-right: 1px solid rgba(147,51,234,0.1);
-    margin-right: 24px;
-  }
+.term {
+flex: 1;
+padding-right: 20px;
+border-right: 1px solid rgba(147,51,234,0.1);
+margin-right: 20px;
+}
 
-  .term:last-child {
-    border-right: none;
-    margin-right: 0;
-    padding-right: 0;
-  }
+.term:last-child {
+border-right: none;
+margin-right: 0;
+padding-right: 0;
+}
 
-  .term-label {
-    font-size: 7px;
-    letter-spacing: 3px;
-    color: rgba(147,51,234,0.45);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
+.term-label {
+font-size: 7px;
+letter-spacing: 3px;
+color: rgba(147,51,234,0.45);
+text-transform: uppercase;
+margin-bottom: 5px;
+}
 
-  .term-val {
-    font-size: 11px;
-    color: rgba(210,185,255,0.6);
-    font-weight: 200;
-    line-height: 1.5;
-  }
+.term-val {
+font-size: 11px;
+color: rgba(210,185,255,0.6);
+font-weight: 200;
+line-height: 1.5;
+}
 
-  /* Footer */
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 24px 0 48px;
-    border-top: 1px solid rgba(147,51,234,0.1);
-  }
+.footer {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+padding: 22px 0 44px;
+border-top: 1px solid rgba(147,51,234,0.1);
+}
 
-  .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
+.contacts {
+display: flex;
+flex-direction: column;
+gap: 3px;
+}
 
-  .contact {
-    font-size: 9px;
-    color: rgba(147,51,234,0.45);
-    font-weight: 200;
-    letter-spacing: 1.5px;
-  }
+.contact {
+font-size: 9px;
+color: rgba(147,51,234,0.45);
+font-weight: 200;
+letter-spacing: 1.5px;
+}
 
-  .watermark {
-    font-family: 'Cormorant', serif;
-    font-size: 32px;
-    font-style: italic;
-    font-weight: 300;
-    letter-spacing: 3px;
-    background: linear-gradient(135deg, rgba(147,51,234,0.5), rgba(192,132,252,0.3));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+.watermark {
+font-family: ‘Cormorant’, serif;
+font-size: 30px;
+font-style: italic;
+font-weight: 300;
+letter-spacing: 3px;
+background: linear-gradient(135deg, rgba(147,51,234,0.5), rgba(192,132,252,0.3));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
 
-  /* Bottom accent */
-  .bottom-line {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #9333ea, #c084fc, #9333ea, transparent);
-    opacity: 0.4;
-  }
+.bottom-line {
+position: absolute;
+bottom: 0; left: 0; right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, #9333ea, #c084fc, #9333ea, transparent);
+opacity: 0.4;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+body { padding: 0 0 40px; }
+.hero { padding: 36px 24px 32px; }
+.body { padding: 0 24px; }
+
+.pack-row {
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+}
+.pack-contents {
+  grid-column: 1 / -1;
+  padding-bottom: 4px;
+}
+
+.services-grid { grid-template-columns: 1fr; }
+.svc:nth-child(even) {
+  padding-left: 0;
+  border-left: none;
+}
+
+.terms-row { flex-wrap: wrap; gap: 16px; }
+.term { flex: 1 1 40%; border-right: none; margin-right: 0; }
+
+.footer { flex-direction: column; gap: 16px; align-items: flex-start; padding-bottom: 36px; }
+
+}
 </style>
+
 </head>
 <body>
 <div class="poster">
   <div class="bottom-line"></div>
 
   <!-- HERO -->
+
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-top">
@@ -380,169 +404,176 @@
   </div>
 
   <div class="body">
+<!-- PACKS -->
+<div class="packs-section">
+  <div class="section-label">Пакеты оформления / Design Packages</div>
 
-    <!-- PACKS -->
-    <div class="packs-section">
-      <div class="section-label">Пакеты оформления / Design Packages</div>
-
-      <div class="pack-row">
-        <div>
-          <div class="pack-title">VK Pack</div>
-          <div class="pack-sub">ВКонтакте</div>
-        </div>
-        <div class="pack-contents">
-          Аватарка · Обложка · 5 кнопок обсуждений
-        </div>
-        <div class="pack-cost">
-          <span class="cost-rub">1 200 ₽</span>
-          <span class="cost-usd">$13 USD</span>
-          <span class="cost-days">3–5 дней</span>
-        </div>
-      </div>
-
-      <div class="pack-row">
-        <div>
-          <div class="pack-title">Twitch Pack</div>
-          <div class="pack-sub">Static</div>
-        </div>
-        <div class="pack-contents">
-          Аватарка · Обложка · Панели до 5 · Статичный оверлей
-        </div>
-        <div class="pack-cost">
-          <span class="cost-rub">2 000 ₽</span>
-          <span class="cost-usd">$22 USD</span>
-          <span class="cost-days">4–6 дней</span>
-        </div>
-      </div>
-
-      <div class="pack-row">
-        <div>
-          <div class="pack-title">Twitch Pack</div>
-          <div class="pack-sub">Animated</div>
-        </div>
-        <div class="pack-contents">
-          Аватарка · Обложка · Панели до 5 · <span class="special">Анимированный оверлей</span>
-        </div>
-        <div class="pack-cost">
-          <span class="cost-rub">3 200 ₽</span>
-          <span class="cost-usd">$35 USD</span>
-          <span class="cost-days">5–7 дней</span>
-        </div>
-      </div>
-
-      <div class="pack-row">
-        <div>
-          <div class="pack-title">YouTube Pack</div>
-          <div class="pack-sub">YouTube</div>
-        </div>
-        <div class="pack-contents">
-          Аватарка · Обложка канала · 1 превью · Статичный оверлей
-        </div>
-        <div class="pack-cost">
-          <span class="cost-rub">2 000 ₽</span>
-          <span class="cost-usd">$22 USD</span>
-          <span class="cost-days">4–6 дней</span>
-        </div>
-      </div>
+  <div class="pack-row">
+    <div>
+      <div class="pack-title">VK Pack</div>
+      <div class="pack-sub">ВКонтакте</div>
     </div>
-
-    <!-- SERVICES -->
-    <div class="services-section">
-      <div class="section-label">Разовые услуги / Individual Services</div>
-      <div class="services-grid">
-        <div class="svc">
-          <span class="svc-name">Аватарка</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">300 ₽ / $4</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Короткий эдит (до 1 мин)</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">800 ₽ / $9</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Баннер / обложка</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">400 ₽ / $5</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Длинный эдит (1–5 мин)</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">1 500 ₽ / $17</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Шаблон для постов</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">350 ₽ / $4</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Монтаж видео (до 10 мин)</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">1 200 ₽ / $13</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Статичный оверлей</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">800 ₽ / $9</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Анимированный оверлей</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">1 500 ₽ / $17</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Мем-картинка</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">150 ₽ / $2</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Мем-видео</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">400 ₽ / $5</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Панели Twitch (доп. шт.)</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">100 ₽ / $1</span>
-        </div>
-        <div class="svc">
-          <span class="svc-name">Превью YouTube (доп.)</span>
-          <span class="svc-dot"></span>
-          <span class="svc-price">300 ₽ / $4</span>
-        </div>
-      </div>
+    <div class="pack-contents">
+      Аватарка · Обложка · 5 кнопок обсуждений
     </div>
-
-    <!-- TERMS -->
-    <div class="bottom">
-      <div class="terms-row">
-        <div class="term">
-          <div class="term-label">Предоплата</div>
-          <div class="term-val">20% от стоимости</div>
-        </div>
-        <div class="term">
-          <div class="term-label">Правки</div>
-          <div class="term-val">3 бесплатно<br>далее 100 ₽ / $1</div>
-        </div>
-        <div class="term">
-          <div class="term-label">Срочный заказ</div>
-          <div class="term-val">+20% к цене</div>
-        </div>
-        <div class="term">
-          <div class="term-label">Постоянным</div>
-          <div class="term-val">−10% со 2-го заказа</div>
-        </div>
-      </div>
-
-      <div class="footer">
-        <div class="contacts">
-          <div class="contact">TG · @shumishua</div>
-          <div class="contact">TikTok / YT / Inst · @shumishuax</div>
-          <div class="contact">TikTok Gaming · @shumishua.gg</div>
-        </div>
-        <div class="watermark">Shumi Vision</div>
-      </div>
+    <div class="pack-cost">
+      <span class="cost-rub">1 200 ₽</span>
+      <span class="cost-usd">$13 USD</span>
+      <span class="cost-days">3–5 дней</span>
     </div>
+  </div>
+
+  <div class="pack-row">
+    <div>
+      <div class="pack-title">Twitch Pack</div>
+      <div class="pack-sub">Static</div>
+    </div>
+    <div class="pack-contents">Аватарка · Обложка · Панели до 5 шт. · Статичный оверлей
+    </div>
+    <div class="pack-cost">
+      <span class="cost-rub">2 000 ₽</span>
+      <span class="cost-usd">$22 USD</span>
+      <span class="cost-days">4–6 дней</span>
+    </div>
+  </div>
+
+  <div class="pack-row">
+    <div>
+      <div class="pack-title">Twitch Pack</div>
+      <div class="pack-sub">Animated</div>
+    </div>
+    <div class="pack-contents">
+      Аватарка · Обложка · Панели до 5 шт. · <span class="special">Анимированный оверлей</span>
+    </div>
+    <div class="pack-cost">
+      <span class="cost-rub">3 200 ₽</span>
+      <span class="cost-usd">$35 USD</span>
+      <span class="cost-days">5–7 дней</span>
+    </div>
+  </div>
+
+  <div class="pack-row">
+    <div>
+      <div class="pack-title">YouTube Pack</div>
+      <div class="pack-sub">YouTube</div>
+    </div>
+    <div class="pack-contents">
+      Аватарка · Обложка канала · 1 превью · Статичный оверлей
+    </div>
+    <div class="pack-cost">
+      <span class="cost-rub">2 000 ₽</span>
+      <span class="cost-usd">$22 USD</span>
+      <span class="cost-days">4–6 дней</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-section">
+  <div class="section-label">Разовые услуги / Individual Services</div>
+  <div class="services-grid">
+    <div class="svc">
+      <span class="svc-name">Аватарка</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">300 ₽ / $4</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Короткий эдит (до 1 мин)</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">800 ₽ / $9</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Баннер / обложка</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">400 ₽ / $5</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Длинный эдит (1–5 мин)</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">1 500 ₽ / $17</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Шаблон для постов</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">350 ₽ / $4</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Монтаж видео (до 10 мин)</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">1 200 ₽ / $13</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Статичный оверлей</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">800 ₽ / $9</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Анимированный оверлей</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">1 500 ₽ / $17</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Ретушь фото</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">300 ₽ / $4</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Обработка видео</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">600 ₽ / $7</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Мем-картинка</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">150 ₽ / $2</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Мем-видео</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">400 ₽ / $5</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Панели Twitch (доп. шт.)</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">100 ₽ / $1</span>
+    </div>
+    <div class="svc">
+      <span class="svc-name">Превью YouTube (доп.)</span>
+      <span class="svc-dot"></span>
+      <span class="svc-price">300 ₽ / $4</span>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS + FOOTER -->
+<div class="bottom">
+  <div class="terms-row">
+    <div class="term">
+      <div class="term-label">Предоплата</div>
+      <div class="term-val">20% от стоимости</div>
+    </div>
+    <div class="term">
+      <div class="term-label">Правки</div>
+      <div class="term-val">3 бесплатно<br>далее 100 ₽ / $1</div>
+    </div>
+    <div class="term"><div class="term-label">Срочный заказ</div>
+      <div class="term-val">+20% к цене</div>
+    </div>
+    <div class="term">
+      <div class="term-label">Постоянным</div>
+      <div class="term-val">−10% со 2-го заказа</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="contacts">
+      <div class="contact">TG · @shumishua</div>
+      <div class="contact">TikTok / YT / Inst · @shumishuax</div>
+      <div class="contact">TikTok Gaming · @shumishua.gg</div>
+    </div>
+    <div class="watermark">Shumi Vision</div>
+  </div>
+</div>
 
   </div>
 </div>
