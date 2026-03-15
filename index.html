@@ -4,479 +4,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shumi Vision — Прайс-лист</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Shumi Vision — Прайс</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --purple: #b44fff;
-    --purple-dim: #7b2fbf;
-    --purple-glow: rgba(180, 79, 255, 0.35);
-    --purple-soft: rgba(180, 79, 255, 0.12);
-    --chrome: #d0d8e8;
-    --chrome-dim: #8a94a8;
-    --bg: #060608;
-    --bg2: #0c0c12;
-    --bg3: #111118;
-    --border: rgba(180, 79, 255, 0.2);
-    --border-bright: rgba(180, 79, 255, 0.55);
-    --text: #e8eaf0;
-    --text-dim: #8a8fa8;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Exo 2', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.5;
-  }
-  .bg-glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
-  .bg-glow-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(140,40,220,0.18) 0%, transparent 70%); top: -200px; left: -200px; animation: float1 12s ease-in-out infinite; }
-  .bg-glow-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(100,20,180,0.12) 0%, transparent 70%); bottom: -100px; right: -150px; animation: float2 15s ease-in-out infinite; }
-  @keyframes float1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(40px, 30px); } }
-  @keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-30px, -40px); } }
+:root {
+  --neon:   #bf5fff;
+  --neon2:  #9b3dff;
+  --neon3:  #d4a0ff;
+  --glow:   rgba(160,60,255,0.5);
+  --glow2:  rgba(160,60,255,0.2);
+  --chrome: #c8cdd8;
+  --chrome2:#8892a4;
+  --bg:     #000000;
+  --bg3:    #0d0b12;
+  --line:   rgba(160,60,255,0.2);
+  --line2:  rgba(160,60,255,0.5);
+  --t:      #e8eaf2;
+  --tm:     #8890a8;
+  --td:     #444460;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:'Manrope',sans-serif;min-height:100vh;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:999;mix-blend-mode:screen;opacity:0.6;}
+.amb{position:fixed;border-radius:50%;filter:blur(130px);pointer-events:none;z-index:0}
+.amb-1{width:800px;height:800px;background:radial-gradient(circle,rgba(140,40,255,0.2) 0%,transparent 60%);top:-300px;left:-300px;animation:a1 20s ease-in-out infinite}
+.amb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(100,20,200,0.12) 0%,transparent 60%);bottom:-200px;right:-200px;animation:a2 25s ease-in-out infinite}
+@keyframes a1{0%,100%{transform:translate(0,0)}50%{transform:translate(80px,60px)}}
+@keyframes a2{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,-80px)}}
 
-header { position: relative; z-index: 10; padding: 52px 24px 40px; text-align: center; }
-.logo-wrap { display: inline-flex; align-items: center; gap: 16px; margin-bottom: 10px; }
-.logo-letters { font-family: ‘Rajdhani’, sans-serif; font-size: 52px; font-weight: 700; letter-spacing: -1px; background: linear-gradient(160deg, #ffffff 20%, var(–chrome) 50%, #a0a8be 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 18px rgba(180,79,255,0.7)) drop-shadow(0 0 6px rgba(255,255,255,0.3)); line-height: 1; }
-.header-sub { font-family: ‘Rajdhani’, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(–purple); opacity: 0.85; margin-bottom: 28px; }
-.header-title { font-family: ‘Rajdhani’, sans-serif; font-size: 38px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(–chrome); text-shadow: 0 0 30px rgba(180,79,255,0.5); line-height: 1.1; }
-.header-title span { color: var(–purple); text-shadow: 0 0 20px var(–purple), 0 0 40px var(–purple-glow); }
-.header-divider { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(–purple), transparent); margin: 20px auto 0; box-shadow: 0 0 8px var(–purple-glow); }
+/* HEADER */
+header{position:relative;z-index:10;padding:60px 28px 0;max-width:620px;margin:0 auto}
+.hd-eyebrow{font-size:10px;font-weight:600;letter-spacing:6px;text-transform:uppercase;color:var(–td);margin-bottom:80px;display:flex;justify-content:space-between}
+.hd-title-row{display:flex;align-items:flex-end;justify-content:flex-end;gap:20px;margin-bottom:6px;border-bottom:1px solid var(–line);padding-bottom:20px}
+.hd-title-right{text-align:right;padding-bottom:8px}
+.hd-brand-name{font-family:‘Bebas Neue’,sans-serif;font-size:28px;letter-spacing:4px;color:var(–chrome2);line-height:1;text-shadow:0 0 12px rgba(160,60,255,0.3)}
+.hd-tagline{font-size:9px;font-weight:300;letter-spacing:3px;color:var(–td);text-transform:uppercase;margin-top:6px}
+.hd-sub-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0 48px}
+.hd-services{font-size:11px;font-weight:300;color:var(–td);letter-spacing:1px}
+.hd-year{font-family:‘Bebas Neue’,sans-serif;font-size:14px;letter-spacing:4px;color:var(–td)}
 
-main { position: relative; z-index: 10; max-width: 580px; margin: 0 auto; padding: 0 16px 60px; }
+/* MAIN */
+main{position:relative;z-index:10;max-width:620px;margin:0 auto;padding:0 28px 80px}
+.sec{margin-bottom:44px;animation:up 0.6s ease both}
+.sec:nth-child(1){animation-delay:.08s}.sec:nth-child(2){animation-delay:.16s}.sec:nth-child(3){animation-delay:.24s}.sec:nth-child(4){animation-delay:.32s}.sec:nth-child(5){animation-delay:.40s}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:2px;padding-bottom:14px;border-bottom:1px solid var(–line)}
+.sec-num{font-family:‘Bebas Neue’,sans-serif;font-size:11px;letter-spacing:3px;color:var(–neon);opacity:0.5;min-width:24px}
+.sec-label{font-size:9px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(–neon2);text-shadow:0 0 8px var(–glow2)}
+.sec-rule{flex:1;height:1px;background:linear-gradient(90deg,var(–line2),transparent)}
 
-.section-label { display: flex; align-items: center; gap: 12px; margin: 36px 0 16px; }
-.section-label-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(–border), transparent); }
-.section-label-text { font-family: ‘Rajdhani’, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(–purple); white-space: nowrap; padding: 4px 10px; border: 1px solid var(–border); border-radius: 2px; background: var(–purple-soft); }
+/* ROWS */
+.row{display:flex;align-items:center;justify-content:space-between;padding:14px 8px;border-bottom:1px solid rgba(255,255,255,0.03);gap:16px;border-radius:4px;transition:background 0.25s;cursor:default;}
+.row:hover{background:rgba(160,60,255,0.04)}
+.row:last-child{border-bottom:none}
+.row-name{font-size:14px;font-weight:500;color:var(–chrome);line-height:1.3;letter-spacing:0.2px;margin-bottom:3px}
+.row-sub{font-size:10px;font-weight:300;color:var(–td);letter-spacing:0.5px}
+.row-r{text-align:right;flex-shrink:0}
+.row-price{font-family:‘Bebas Neue’,sans-serif;font-size:20px;letter-spacing:1px;color:var(–neon3);line-height:1;white-space:nowrap;text-shadow:0 0 10px var(–glow2)}
+.row-usd{font-size:10px;font-weight:300;color:var(–td);margin-top:2px}
+.row-days{font-size:9px;color:var(–td);margin-top:3px;letter-spacing:0.5px}
 
-.card { background: linear-gradient(145deg, #0f0f18 0%, #0a0a12 100%); border: 1px solid var(–border); border-radius: 8px; padding: 20px 20px 18px; margin-bottom: 10px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.2s; cursor: default; animation: fadeUp 0.5s ease both; }
-.card::before { content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 10%, var(–purple-dim) 50%, transparent 90%); opacity: 0; transition: opacity 0.3s; }
-.card:hover { border-color: var(–border-bright); transform: translateY(-2px); }
-.card:hover::before { opacity: 1; }
-.card-corner { position: absolute; top: 0; right: 0; width: 40px; height: 40px; border-top: 2px solid var(–purple-dim); border-right: 2px solid var(–purple-dim); border-radius: 0 8px 0 0; opacity: 0.4; }
-.card-featured { border-color: rgba(180,79,255,0.35); background: linear-gradient(145deg, #130e1e 0%, #0d0a18 100%); }
-.card-featured .card-corner { border-color: var(–purple); opacity: 0.7; }
-.card-featured::after { content: ‘’; position: absolute; inset: -1px; border-radius: 8px; background: transparent; box-shadow: 0 0 0 1px rgba(180,79,255,0.0); transition: box-shadow 0.5s; pointer-events: none; }
-.card-featured:hover::after { box-shadow: 0 0 20px rgba(180,79,255,0.2), inset 0 0 20px rgba(180,79,255,0.04); }
+/* PACK CARDS */
+.packs{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.pcard{background:var(–bg3);border:1px solid var(–line);border-radius:8px;padding:20px;position:relative;overflow:hidden;cursor:default;transition:border-color 0.3s,box-shadow 0.3s,background 0.3s;box-shadow:0 0 0 1px rgba(160,60,255,0.06),0 0 16px rgba(160,60,255,0.1);}
+.pcard:hover{border-color:rgba(160,60,255,0.65);background:rgba(160,60,255,0.05);box-shadow:0 0 0 1px rgba(160,60,255,0.2),0 0 20px rgba(160,60,255,0.35),0 0 50px rgba(160,60,255,0.12),inset 0 0 20px rgba(160,60,255,0.04);}
+.pcard::before{content:’’;position:absolute;top:0;right:0;width:48px;height:48px;border-top:1.5px solid rgba(160,60,255,0.4);border-right:1.5px solid rgba(160,60,255,0.4);border-radius:0 8px 0 0;transition:border-color 0.3s;}
+.pcard:hover::before{border-color:rgba(160,60,255,0.9)}
+.pcard::after{content:’’;position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(160,60,255,0.6),transparent);opacity:0;transition:opacity 0.3s;}
+.pcard:hover::after{opacity:1}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.pcard-name{font-family:‘Bebas Neue’,sans-serif;font-size:22px;letter-spacing:1.5px;color:var(–chrome);line-height:1;text-shadow:0 0 12px rgba(160,60,255,0.2);}
+.pcard-sub{font-size:10px;font-weight:300;color:var(–td);letter-spacing:0.5px;margin-top:5px}
+.pcard-price{text-align:right;flex-shrink:0}
+.pcard-rub{font-family:‘Bebas Neue’,sans-serif;font-size:28px;letter-spacing:1px;color:var(–t);line-height:1;white-space:nowrap;text-shadow:0 0 14px rgba(160,60,255,0.5),0 0 28px rgba(160,60,255,0.25);}
+.pcard-usd{font-size:11px;font-weight:300;color:var(–tm);margin-top:3px}
+.pcard-includes{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-bottom:14px;}
+.pcard-includes li{font-size:11px;font-weight:300;color:var(–tm);display:flex;align-items:center;gap:6px;line-height:1.4;}
+.pcard-includes li::before{content:’’;width:3px;height:3px;border-radius:50%;background:var(–neon);flex-shrink:0;box-shadow:0 0 5px var(–neon);}
+.pcard-footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(255,255,255,0.04);}
+.pcard-days{font-size:10px;font-weight:300;color:var(–td);letter-spacing:0.5px}
+.pcard-badge{display:inline-block;border:1px solid rgba(160,60,255,0.5);border-radius:2px;padding:1px 7px;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(–neon);text-shadow:0 0 6px var(–glow);box-shadow:0 0 8px rgba(160,60,255,0.2);}
+.pcard-note{font-size:10px;font-weight:300;color:var(–td);font-style:italic}
 
-.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.card-icon-name { display: flex; align-items: center; gap: 10px; }
-.card-icon { width: 36px; height: 36px; border-radius: 6px; background: var(–purple-soft); border: 1px solid var(–border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.card-icon svg { width: 18px; height: 18px; stroke: var(–purple); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.card-icon svg.filled { fill: var(–purple); stroke: none; }
-.card-name { font-family: ‘Rajdhani’, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.5px; color: var(–chrome); line-height: 1.2; }
-.card-name small { display: block; font-family: ‘Exo 2’, sans-serif; font-size: 11px; font-weight: 400; color: var(–text-dim); letter-spacing: 0; margin-top: 2px; }
+/* INFO GRID */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:44px;animation:up 0.6s ease both .48s}
+.ibox{background:var(–bg3);border:1px solid rgba(160,60,255,0.15) !important;border-radius:6px;padding:16px;box-shadow:0 0 8px rgba(160,60,255,0.08);transition:border-color 0.3s,box-shadow 0.3s;}
+.ibox:hover{border-color:rgba(160,60,255,0.5) !important;box-shadow:0 0 16px rgba(160,60,255,0.2),0 0 30px rgba(160,60,255,0.08)}
+.ibox-icon{width:28px;height:28px;border-radius:50%;background:rgba(160,60,255,0.08);border:1px solid rgba(160,60,255,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.ibox-icon svg{width:13px;height:13px;stroke:var(–neon);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ibox-title{font-size:12px;font-weight:600;color:var(–chrome);margin-bottom:5px}
+.ibox-text{font-size:10px;font-weight:300;color:var(–tm);line-height:1.7}
+.ibox-text strong{color:var(–neon3);font-weight:600}
 
-.price-block { text-align: right; flex-shrink: 0; }
-.price-main { font-family: ‘Rajdhani’, sans-serif; font-size: 22px; font-weight: 700; color: var(–purple); text-shadow: 0 0 12px var(–purple-glow); line-height: 1; white-space: nowrap; }
-.price-usd { font-size: 13px; font-weight: 500; color: var(–text-dim); margin-top: 2px; font-family: ‘Exo 2’, sans-serif; }
-.price-tag { display: inline-block; background: var(–purple-soft); border: 1px solid var(–border); border-radius: 3px; padding: 2px 8px; font-size: 11px; font-family: ‘Rajdhani’, sans-serif; font-weight: 600; letter-spacing: 1px; color: var(–purple); margin-top: 4px; }
+/* FOOTER */
+footer{position:relative;z-index:10;max-width:620px;margin:0 auto;padding:0 28px 64px}
+.footer-rule{height:1px;background:linear-gradient(90deg,transparent,var(–line2),transparent);margin-bottom:28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-end}
+.footer-tag{font-size:9px;font-weight:300;letter-spacing:4px;color:var(–td);text-transform:uppercase;text-align:right}
 
-.includes { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px 12px; margin-bottom: 12px; }
-.includes.single-col { grid-template-columns: 1fr; }
-.includes li { font-size: 12.5px; color: var(–text-dim); display: flex; align-items: center; gap: 6px; line-height: 1.4; }
-.includes li::before { content: ‘’; width: 4px; height: 4px; border-radius: 50%; background: var(–purple); flex-shrink: 0; box-shadow: 0 0 6px var(–purple); }
-
-.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
-.deadline-badge { display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(–text-dim); font-family: ‘Rajdhani’, sans-serif; font-weight: 500; letter-spacing: 0.5px; }
-.deadline-badge svg { width: 13px; height: 13px; stroke: var(–text-dim); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-.revision-badge { font-size: 11px; color: var(–purple); opacity: 0.75; font-family: ‘Rajdhani’, sans-serif; letter-spacing: 0.5px; }
-
-.card-note { font-size: 11.5px; color: var(–text-dim); font-style: italic; margin-top: 8px; padding: 6px 10px; border-left: 2px solid var(–border-bright); background: var(–purple-soft); border-radius: 0 4px 4px 0; }
-
-.overlay-variants { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-.variant-box { border: 1px solid var(–border); border-radius: 5px; padding: 10px 12px; background: rgba(255,255,255,0.02); }
-.variant-box .v-name { font-family: ‘Rajdhani’, sans-serif; font-size: 14px; font-weight: 600; color: var(–chrome); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
-.variant-box .v-name svg { width: 14px; height: 14px; stroke: var(–purple); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.variant-box .v-price { font-family: ‘Rajdhani’, sans-serif; font-size: 18px; font-weight: 700; color: var(–purple); text-shadow: 0 0 10px var(–purple-glow); }
-.variant-box .v-days { font-size: 11px; color: var(–text-dim); margin-top: 2px; display: flex; align-items: center; gap: 4px; }
-.variant-box .v-days svg { width: 11px; height: 11px; stroke: var(–text-dim); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-.urgency-banner { background: linear-gradient(135deg, rgba(180,79,255,0.08), rgba(100,20,180,0.05)); border: 1px solid rgba(180,79,255,0.25); border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; margin: 28px 0 12px; }
-.urgency-icon, .discount-icon { width: 36px; height: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-.urgency-icon svg, .discount-icon svg { width: 22px; height: 22px; stroke: var(–purple); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.urgency-text, .discount-text { font-size: 13px; color: var(–text-dim); line-height: 1.5; }
-.urgency-text strong, .discount-text strong { color: var(–text); font-family: ‘Rajdhani’, sans-serif; font-size: 15px; font-weight: 700; display: block; margin-bottom: 2px; }
-.discount-banner { background: linear-gradient(135deg, rgba(180,79,255,0.12), rgba(80,10,160,0.08)); border: 1px solid var(–border-bright); border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; margin-top: 10px; }
-
-footer { position: relative; z-index: 10; text-align: center; padding: 20px 24px 44px; }
-.footer-divider { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(–border-bright), transparent); margin: 0 auto 20px; }
-.footer-cta { font-family: ‘Rajdhani’, sans-serif; font-size: 22px; font-weight: 700; color: var(–chrome); letter-spacing: 1px; margin-bottom: 6px; }
-.footer-handle { font-size: 14px; color: var(–purple); opacity: 0.85; letter-spacing: 1px; }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-.card:nth-child(1){animation-delay:0.05s} .card:nth-child(2){animation-delay:0.10s} .card:nth-child(3){animation-delay:0.15s} .card:nth-child(4){animation-delay:0.20s} .card:nth-child(5){animation-delay:0.25s} .card:nth-child(6){animation-delay:0.30s}
-::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(–bg)} ::-webkit-scrollbar-thumb{background:var(–purple-dim);border-radius:2px}
-
-/* Цвета иконок пакетов */
-.icon-vk svg { stroke: #4a9eff; }
-.icon-twitch svg { stroke: #a970ff; }
-.icon-youtube svg { stroke: #ff4444; }
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#000}::-webkit-scrollbar-thumb{background:rgba(160,60,255,0.4);border-radius:2px}
 </style>
 
 </head>
 <body>
-
-<div class="bg-glow bg-glow-1"></div>
-<div class="bg-glow bg-glow-2"></div>
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
 
 <header>
-  <div class="logo-wrap"><div class="logo-letters">SV</div></div>
-  <div class="header-sub">Shumi Vision</div>
-  <div class="header-title">Прайс<span>—</span>лист</div>
-  <div class="header-divider"></div>
+  <div class="hd-eyebrow">
+    <span>Shumi Vision · Услуги и цены</span>
+    <span>2026</span>
+  </div>
+
+  <div class="hd-title-row">
+    <div class="hd-title-right">
+      <div class="hd-brand-name">SHUMI<br>VISION</div>
+      <div class="hd-tagline">видеоэдиты · дизайн · ретушь</div>
+    </div>
+  </div>
+
+  <div class="hd-sub-row">
+    <span class="hd-services">монтаж · оверлеи · паки под ключ</span>
+    <span class="hd-year">PRICE LIST</span>
+  </div>
 </header>
 
 <main>
-
-  <!-- ЭДИТЫ -->
-
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <div class="section-label-text">Эдиты · Монтаж</div>
-    <div class="section-label-line" style="background:linear-gradient(270deg,var(--border),transparent)"></div>
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">01</span><span class="sec-label">Эдиты и монтаж</span><div class="sec-rule"></div></div>
+    <div class="row"><div><div class="row-name">Короткий эдит</div><div class="row-sub">до 1 мин · TikTok / Reels / Shorts</div></div><div class="row-r"><div class="row-price">от 800 ₽</div><div class="row-usd">от $9</div><div class="row-days">1–3 дня</div></div></div>
+    <div class="row"><div><div class="row-name">Длинный эдит</div><div class="row-sub">1–5 мин · AMV / YouTube</div></div><div class="row-r"><div class="row-price">от 1 500 ₽</div><div class="row-usd">от $17</div><div class="row-days">3–5 дней</div></div></div>
+    <div class="row"><div><div class="row-name">Монтаж видео</div><div class="row-sub">до 10 мин · влоги / геймплей</div></div><div class="row-r"><div class="row-price">от 1 200 ₽</div><div class="row-usd">от $13</div><div class="row-days">2–4 дня</div></div></div>
   </div>
-
-  <div class="card">
-    <div class="card-corner"></div><div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-        <div class="card-name">Короткий эдит<small>до 1 минуты · TikTok / Reels / Shorts</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от 800 ₽</div>
-        <div class="price-usd">от $9</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Нарезка под музыку</li><li>Цветокоррекция</li>
-      <li>Эффекты и переходы</li><li>Атмосфера и стиль</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–3 дня</div>
-      <div class="revision-badge">3 правки включено</div>
-    </div>
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">02</span><span class="sec-label">Ретушь и обработка</span><div class="sec-rule"></div></div>
+    <div class="row"><div><div class="row-name">Ретушь фото</div><div class="row-sub">портреты / соцсети</div></div><div class="row-r"><div class="row-price">от 300 ₽</div><div class="row-usd">от $4</div><div class="row-days">1–2 дня</div></div></div>
+    <div class="row"><div><div class="row-name">Обработка видео</div><div class="row-sub">стилизация / цветокоррекция</div></div><div class="row-r"><div class="row-price">от 600 ₽</div><div class="row-usd">от $7</div><div class="row-days">1–3 дня</div></div></div>
   </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg></div>
-        <div class="card-name">Длинный эдит<small>1–5 минут · AMV / YouTube</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от 1500 ₽</div>
-        <div class="price-usd">от $17</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Подбор материала</li><li>Динамика и ритм</li>
-      <li>Саундизайн</li><li>Текстовые вставки</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3–5 дней</div>
-      <div class="revision-badge">3 правки включено</div>
-    </div>
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">03</span><span class="sec-label">Дизайн</span><div class="sec-rule"></div></div>
+    <div class="row"><div><div class="row-name">Аватарка</div><div class="row-sub">под стиль платформы</div></div><div class="row-r"><div class="row-price">от 300 ₽</div><div class="row-usd">от $4</div><div class="row-days">1–2 дня</div></div></div>
+    <div class="row"><div><div class="row-name">Баннер / обложка</div><div class="row-sub">канал / группа / стрим</div></div><div class="row-r"><div class="row-price">от 400 ₽</div><div class="row-usd">от $5</div><div class="row-days">1–2 дня</div></div></div>
+    <div class="row"><div><div class="row-name">Шаблон для постов</div><div class="row-sub">единый стиль профиля</div></div><div class="row-r"><div class="row-price">от 350 ₽</div><div class="row-usd">от $4</div><div class="row-days">1–2 дня</div></div></div>
   </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg></div>
-        <div class="card-name">Монтаж видео<small>до 10 минут · влоги / геймплей / обзоры</small></div>
+  <div class="sec"><div class="sec-head"><span class="sec-num">04</span><span class="sec-label">Оверлей для стрима</span><div class="sec-rule"></div></div>
+    <div class="row"><div><div class="row-name">Статичный оверлей</div><div class="row-sub">адаптация под OBS / StreamElements</div></div><div class="row-r"><div class="row-price">800 ₽</div><div class="row-usd">$9</div><div class="row-days">2–4 дня</div></div></div>
+    <div class="row"><div><div class="row-name">Анимированный оверлей</div><div class="row-sub">алерты · переходы · анимации</div></div><div class="row-r"><div class="row-price">1 500 ₽</div><div class="row-usd">$17</div><div class="row-days">2–4 дня</div></div></div>
+  </div>
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">05</span><span class="sec-label">Паки под ключ</span><div class="sec-rule"></div></div>
+    <div class="packs">
+      <div class="pcard">
+        <div class="pcard-top">
+          <div><div class="pcard-name">VK Pack</div><div class="pcard-sub">полное оформление VK</div></div>
+          <div class="pcard-price"><div class="pcard-rub">1 200 ₽</div><div class="pcard-usd">$13</div></div>
+        </div>
+        <ul class="pcard-includes"><li>Аватарка</li><li>Обложка</li><li>5 кнопок обсуждений</li></ul>
+        <div class="pcard-footer"><div class="pcard-days">3–5 дней · 2 правки</div></div>
       </div>
-      <div class="price-block">
-        <div class="price-main">от 1200 ₽</div>
-        <div class="price-usd">от $13</div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <div><div class="pcard-name">Twitch Pack Static</div><div class="pcard-sub">статичное оформление стрима</div></div>
+          <div class="pcard-price"><div class="pcard-rub">2 000 ₽</div><div class="pcard-usd">$22</div></div>
+        </div>
+        <ul class="pcard-includes"><li>Аватарка</li><li>Обложка</li><li>Панели до 5 шт.</li><li>Статичный оверлей</li></ul>
+        <div class="pcard-footer"><div class="pcard-days">4–6 дней · 2 правки</div><div class="pcard-note">Доп. панели — 100 ₽/$1</div></div>
       </div>
-    </div>
-    <ul class="includes">
-      <li>Сборка из материалов</li><li>Цветокоррекция</li>
-      <li>Базовая озвучка</li><li>Субтитры / титры</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2–4 дня</div>
-      <div class="revision-badge">3 правки включено</div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <div>
+            <div class="pcard-name">Twitch Pack Animated <span class="pcard-badge">premium</span></div>
+            <div class="pcard-sub">анимированное оформление стрима</div>
+          </div>
+          <div class="pcard-price"><div class="pcard-rub">3 200 ₽</div><div class="pcard-usd">$35</div></div>
+        </div>
+        <ul class="pcard-includes"><li>Аватарка</li><li>Обложка</li><li>Панели до 5 шт.</li><li>Анимированный оверлей</li></ul>
+        <div class="pcard-footer"><div class="pcard-days">5–7 дней · 2 правки</div><div class="pcard-note">Доп. панели — 100 ₽/$1</div></div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <div><div class="pcard-name">YouTube Pack</div><div class="pcard-sub">полное оформление канала</div></div>
+          <div class="pcard-price"><div class="pcard-rub">2 000 ₽</div><div class="pcard-usd">$22</div></div>
+        </div>
+        <ul class="pcard-includes"><li>Аватарка</li><li>Обложка канала</li><li>1 превью для видео</li><li>Статичный оверлей</li></ul>
+        <div class="pcard-footer"><div class="pcard-days">4–6 дней · 2 правки</div><div class="pcard-note">Доп. превью — 300 ₽/$4</div></div>
+      </div>
     </div>
   </div>
-
-  <!-- РЕТУШЬ -->
-
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <div class="section-label-text">Ретушь · Обработка</div>
-    <div class="section-label-line" style="background:linear-gradient(270deg,var(--border),transparent)"></div>
+  <div class="info-grid">
+    <div class="ibox"><div class="ibox-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="ibox-title">Срочный заказ</div><div class="ibox-text">Доплата <strong>+20%</strong>. Выбирается при оформлении заявки в боте.</div></div>
+    <div class="ibox"><div class="ibox-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div class="ibox-title">Постоянным клиентам</div><div class="ibox-text">От 2 заказов — скидка <strong>10%</strong> применяется автоматически.</div></div><div class="ibox"><div class="ibox-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div class="ibox-title">Предоплата</div><div class="ibox-text"><strong>20%</strong> при подтверждении. Остаток — после сдачи работы.</div></div>
+    <div class="ibox"><div class="ibox-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="ibox-title">Правки</div><div class="ibox-text"><strong>2–3 правки</strong> включены. Дополнительная — от 100 ₽.</div></div>
   </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-        <div class="card-name">Ретушь фотографии<small>портреты / соцсети</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от {{price_retouch_rub}} ₽</div>
-        <div class="price-usd">от ${{price_retouch_usd}}</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Цветокоррекция</li><li>Устранение дефектов</li>
-      <li>Работа со светом</li><li>Высокое разрешение</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 дня</div><div class="revision-badge">2 правки включено</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:var(--purple);stroke:none"/></svg></div>
-        <div class="card-name">Обработка видео<small>стилизация / цветокоррекция</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от {{price_video_edit_rub}} ₽</div>
-        <div class="price-usd">от ${{price_video_edit_usd}}</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Стилизация атмосферы</li><li>Чистка звука</li>
-      <li>Стабилизация</li><li>Лёгкий монтаж</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–3 дня</div>
-      <div class="revision-badge">2 правки включено</div>
-    </div>
-  </div>
-
-  <!-- ДИЗАЙН -->
-
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <div class="section-label-text">Дизайн</div>
-    <div class="section-label-line" style="background:linear-gradient(270deg,var(--border),transparent)"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="card-name">Аватарка<small>под стиль платформы / канала</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от 300 ₽</div>
-        <div class="price-usd">от $4</div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 дня</div>
-      <div class="revision-badge">2 правки включено</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <div class="card-name">Баннер / обложка<small>канал / группа / стрим</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от 400 ₽</div>
-        <div class="price-usd">от $5</div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 дня</div>
-      <div class="revision-badge">2 правки включено</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <div class="card-name">Шаблон для постов<small>единый стиль профиля</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">от 350 ₽</div>
-        <div class="price-usd">от $4</div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 дня</div>
-      <div class="revision-badge">2 правки включено</div>
-    </div>
-  </div>
-
-  <!-- ОВЕРЛЕЙ -->
-
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <div class="section-label-text">Оверлей для стрима</div><div class="section-label-line" style="background:linear-gradient(270deg,var(--border),transparent)"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-corner"></div>
-    <div class="overlay-variants">
-      <div class="variant-box">
-        <div class="v-name"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Статичный</div>
-        <div class="v-price">800 ₽ / $9</div>
-        <div class="v-days"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2–4 дня</div>
-      </div>
-      <div class="variant-box">
-        <div class="v-name"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Анимированный</div>
-        <div class="v-price">1500 ₽ / $17</div>
-        <div class="v-days"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2–4 дня</div>
-      </div>
-    </div>
-    <ul class="includes single-col">
-      <li>Рамки в едином стиле</li>
-      <li>Адаптация под OBS / StreamElements</li>
-      <li>Анимированный — алерты и переходы</li>
-    </ul>
-    <div class="card-footer" style="padding-top:10px">
-      <div></div>
-      <div class="revision-badge">2 правки включено</div>
-    </div>
-  </div>
-
-  <!-- ПАКЕТЫ -->
-
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <div class="section-label-text">Паки под ключ</div>
-    <div class="section-label-line" style="background:linear-gradient(270deg,var(--border),transparent)"></div>
-  </div>
-
-  <div class="card card-featured">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon icon-vk"><svg viewBox="0 0 24 24"><path d="M2 7h4l2 4 2-4h4l-4 7h-4l-4-7z" style="fill:none;stroke:#4a9eff;stroke-width:1.8"/><path d="M14 7h4v4a3 3 0 01-3 3h-1" style="stroke:#4a9eff;fill:none;stroke-width:1.8"/></svg></div>
-        <div class="card-name">VK Pack<small>полное оформление VK</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">1200 ₽</div>
-        <div class="price-usd">$13</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Аватарка</li><li>Обложка</li><li>5 кнопок обсуждений</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3–5 дней</div>
-    </div>
-  </div>
-
-  <div class="card card-featured">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon icon-twitch"><svg viewBox="0 0 24 24"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zM11 11V7M16 11V7" style="stroke:#a970ff;fill:none;stroke-width:1.8;stroke-linecap:round"/></svg></div>
-        <div class="card-name">Twitch Pack Static<small>статичное оформление стрима</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">2000 ₽</div>
-        <div class="price-usd">$22</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Аватарка</li><li>Обложка</li>
-      <li>Панели до 5 шт.</li><li>Статичный оверлей</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4–6 дней</div>
-    </div>
-    <div class="card-note">Доп. панели — 100 ₽ / $1 за штуку</div>
-  </div>
-
-  <div class="card card-featured">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon icon-twitch"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" style="stroke:#a970ff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></div>
-        <div class="card-name">Twitch Pack Animated<small>анимированное оформление</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">3200 ₽</div><div class="price-usd">$35</div>
-        <div class="price-tag">PREMIUM</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Аватарка</li><li>Обложка</li>
-      <li>Панели до 5 шт.</li><li>Анимированный оверлей</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5–7 дней</div>
-    </div>
-    <div class="card-note">Доп. панели — 100 ₽ / $1 за штуку</div>
-  </div>
-
-  <div class="card card-featured">
-    <div class="card-corner"></div>
-    <div class="card-top">
-      <div class="card-icon-name">
-        <div class="card-icon icon-youtube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" style="stroke:#ff4444;fill:none;stroke-width:1.8"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#ff4444;stroke:none"/></svg></div>
-        <div class="card-name">YouTube Pack<small>полное оформление канала</small></div>
-      </div>
-      <div class="price-block">
-        <div class="price-main">2000 ₽</div>
-        <div class="price-usd">$22</div>
-      </div>
-    </div>
-    <ul class="includes">
-      <li>Аватарка</li><li>Обложка канала</li>
-      <li>1 превью для видео</li><li>Статичный оверлей</li>
-    </ul>
-    <div class="card-footer">
-      <div class="deadline-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4–6 дней</div>
-    </div>
-    <div class="card-note">Доп. превью — 300 ₽ / $4 · Анимир. оверлей +700 ₽ / +$8</div>
-  </div>
-
-  <!-- ИНФО -->
-
-  <div class="urgency-banner">
-    <div class="urgency-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-    <div class="urgency-text">
-      <strong>Срочный заказ</strong>
-      Быстрее стандартного срока — доплата +20% к стоимости. Выбирается при оформлении заявки.
-    </div>
-  </div>
-
-  <div class="discount-banner">
-    <div class="discount-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-    <div class="discount-text">
-      <strong>Скидка постоянным клиентам</strong>
-      От 2 заказов — скидка 10% применяется автоматически.
-    </div>
-  </div>
-
 </main>
 
 <footer>
-  <div class="footer-divider"></div>
-  <div class="footer-cta">Готов к заказу?</div>
-  <div class="footer-handle">@shumishua</div>
+  <div class="footer-rule"></div>
+  <div class="footer-inner">
+    <div></div>
+    <div>
+      <div class="footer-tag">Shumi Vision</div>
+      <div class="footer-tag" style="margin-top:5px;color:rgba(160,60,255,0.4)">2026</div>
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>
